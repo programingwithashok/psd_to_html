@@ -1,0 +1,36 @@
+// COLOR VARIABLES
+$color-1: #c69963;
+$color-2: #b28451;
+
+//FONT VARIABLES
+$font-1: "Nunito", sans-serif;
+$font-2: "Josefin Sans", sans-serif;
+
+//RESPONSIVE BREAKPOINTS
+$small: 36em; // 576px
+$medium: 48em; // 768px
+$large: 62em; // 992px
+$main: 75em; // 1200px
+$extra-large: 87.5em; // 1400px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html {
+  font-size: 62.5%; /* 10px/16px = 62% -> 1rem = 10px */
+}
+
+body {
+  box-sizing: border-box;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}

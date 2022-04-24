@@ -1,0 +1,336 @@
+    
+    
+    
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+
+     background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+     background-clip: text;
+    -webkit-background-clip: text;
+
+    &__group:not(:last-child)
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//css variable
+
+:root {
+	--variable-neme: type-any-content;
+	--varvh: 100vh;  //100% v-height
+	--varvw: 100vw;  //100% v-width
+}
+//call var(--variable-neme)
+
+
+body {
+	//linear-gradient
+	background-image: linear-gradient(to right, red, blue);
+	background-image: linear-gradient(to left, red, blue), url('img-url');
+	background-image: linear-gradient(
+		105deg, 
+		red 15%,
+		blue 15%);
+	background-image: linear-gradient(
+		105deg, 
+		transparent 50%,
+		blue 50%),
+		url(src);
+		
+
+
+	//clip-path 
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+	-webkit-clip-path: circle(50% at 50% 50%);
+	clip-path: circle(50% at 50% 50%); 
+
+
+	//animation
+	animation: name duration timing-function delay iteration-count direction fill-mode;
+	animation-fill-mode: backwards; 
+
+	//calc
+	width: calc(100% - 100) px;
+
+	//background-clip
+	font-size: 30rem;
+	display: inline-block;
+	background-image: url(img/jjjj);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+
+
+	//outline
+	outline: 1.5rem solid #fff;
+	outline-offset: 3rem;
+
+	//transform skew
+	transform: skewY(-12deg); 
+	& > * {
+		transform: skewY(-12deg); 
+	}
+	//prespective card hover
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+
+	&:hover {
+		transform: rotate(180deg);
+	}
+
+
+	//box-decoration-break
+	h1 {
+		width: 50%;
+		span {
+			padding: 30rem;
+			box-decoration-break: clone;
+			-webkit-box-decoration-break: clone;
+	    }
+	}
+
+
+	//spape-outside 
+	img {
+		float: left; // floate important
+		width: 30rem;
+		height: 30rem;
+
+		shape-outside: circle(50% at 50% 50%);
+		-webkit-shape-outside: circle(50% at 50% 50%);
+
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%); //border radius same
+		
+	}
+	//transtion 
+	transition: all 5s;
+	
+	//backface-visibility
+	transition: all 5s;
+	backface-visibility: hidden;
+
+	//filter
+	filter: blur(3px) brightness(80%);
+
+
+	//video object-fit
+	 video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	 }
+
+
+	//FORM RELATED
+	&::-webkit-input-placeholder {
+		color: red;
+	}
+
+    input:focus {
+		border-bottom: 3px solid rgb(0, 41, 128);
+		
+	}
+	input:focus:invalid {
+			border-bottom: 3px solid rgb(238, 36, 36) !important;	
+	}	
+	input:placeholder-shown + label {
+		opacity: 0;
+		visibility: hidden;
+
+		// placeholder ta jadi thake label opacity 0
+	}
+	
+	//babel 
+	label .radio-dot {
+		position: absolute;
+		content: '';
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		top: 50%;
+		left: 50%;
+		background-color: green;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		transition: all 1s;
+	}
+	input:checked + label .class::after {
+		opacity: 1;
+
+		//radio button custom box create
+	}
+
+
+	
+	//click button
+	
+	
+
+.navigation-button {
+	border: 2px solid green;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	padding: 10px;
+	position: relative;
+	width: 45px;
+	height: 45px;
+
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.icon,
+	.icon::before,
+	.icon::after {
+		display: inline-block;
+		width: 3rem;
+		height: 2px;
+		background-color: #333;
+		transition: all .2s;
+	}
+
+	.icon::before,
+	.icon::after {
+		content: "";
+		position: absolute;
+		left: 0;
+	}
+	.icon::before { top: -1rem; };
+	.icon::after { bottom: -1rem; };
+	
+	&:hover .icon::before { top: -1.1rem };
+	&:hover .icon::after { bottom: -1.1rem };
+
+}
+//javascript click toogle class navigation-button-click
+
+
+.navigation-button-click {
+	border: 2px solid green;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	padding: 10px;
+	position: relative;
+	width: 45px;
+	height: 45px;
+
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		background-color: transparent !important;
+	}
+	.icon,
+	.icon::before,
+	.icon::after {
+		display: inline-block;
+		width: 3rem;
+		height: 2px;
+		background-color: #333;
+		transition: all .2s;
+	}
+
+	.icon::before,
+	.icon::after {
+		content: "";
+		position: absolute;
+		left: 0;
+	}
+	.icon::before { 
+		top: 0;
+		transform: rotate(135deg); };
+	.icon::after { 
+		top: 0;
+		transform: rotate(-135deg);};
+}
+
+
+    // <div class="navigation-button">
+	// 	<span class="icon"></span>
+	// </div>
+
+	// <script>
+	// var button = document.querySelector('.navigation-button');
+	// button.addEventListener("click", () => {
+	// 	button.classList.toggle('navigation-button-click');
+	// 	button.classList.toggle('navigation-button');
+	// })
+
+	// </script>
+
+
+
+	
+	//======================== Flex box =====================
+	
+	//.conteiner class 
+
+	display: flex;
+	flex-direction: column;
+	flex-direction: row;
+	flex-direction: column-reverse; // opside start
+	flex-direction: row-reverse; // opside start
+
+
+	flex-wrap: wrap;
+
+	//same justifi-content
+	align-content: flex-start; //start top
+	align-content: flex-end; //start bottom
+	align-content: center; //center bottom
+	align-content: space-around; // center 
+	
+	justify-content: center; // use 
+	justify-content: space-between; // use 
+	justify-content: space-evenly; // use 
+	justify-content: space-around; // use 
+
+	// align-items: center; // one col height bigger it work
+	align-items: flex-start;  // use 
+	align-items: flex-end;  // use 
+	align-items: stretch;  // use default any col col height appaly all col
+	align-items: baseline;  // base-line work text size
+
+
+	    .col {
+
+			align-self: flex-end; //align item one col check all propaty
+
+			order: -1; //first start all call index in 0 importan
+			order: 1; //last start all call index in 0 importan
+
+			margin-right: auto;
+			margin-left: auto;
+
+			flex-grow: 1; //mine all width except other width
+			flex-basis: 50%; // width one element srink all element finish then start shrink - responsive
+			flex-shrink: 0; // not responsive still width here
+			flex-shrink: 1; // it responsive work
+
+			flex: flex-grow flex-shrink flex-basis;
+		}
